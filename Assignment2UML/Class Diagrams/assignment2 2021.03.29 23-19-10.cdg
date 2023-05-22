@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="assignment2">
+  <ClassDiagramComponents>
+    <Class name="Item" package="assignment2" visibility="public" xPosition="727.0" yPosition="539.0">
+      <Fields>
+        <Field name="itemName" type="String" visibility="private"/>
+        <Field name="itemPrice" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="itemName"/>
+          <Argument type="double" name="itemPrice"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getItemName" returnType="String" visibility="public"/>
+        <Method name="setItemName" returnType="void" visibility="public">
+          <Argument type="String" name="itemName"/>
+        </Method>
+        <Method name="getItemPrice" returnType="double" visibility="public"/>
+        <Method name="setItemPrice" returnType="void" visibility="public">
+          <Argument type="double" name="itemPrice"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Payment" package="assignment2" visibility="public" xPosition="398.0" yPosition="75.0">
+      <Fields>
+        <Field name="val" type="double" visibility="private"/>
+        <Field name="payType" type="PaymentType" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="PaymentType" name="type"/>
+          <Argument type="double" name="amount"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getVal" returnType="double" visibility="public"/>
+        <Method name="setVal" returnType="void" visibility="public">
+          <Argument type="double" name="val"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Receipt" package="assignment2" visibility="public" xPosition="775.0" yPosition="351.0">
+      <Fields>
+        <Field name="items" type="ArrayList&lt;Item&gt;" visibility="private"/>
+        <Field name="payments" type="ArrayList&lt;Payment&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="showReceipt" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Item&gt;" name="list"/>
+          <Argument type="double" name="total"/>
+          <Argument type="double" name="tax"/>
+          <Argument type="double" name="change"/>
+          <Argument type="double" name="subTotal"/>
+          <Argument type="ArrayList&lt;Payment&gt;" name="payments"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Transaction" package="assignment2" visibility="public" xPosition="158.0" yPosition="351.0">
+      <Fields>
+        <Field name="payments" type="ArrayList&lt;Payment&gt;" visibility="private"/>
+        <Field name="items" type="ArrayList&lt;Item&gt;" visibility="private"/>
+        <Field name="subTotal" type="double" visibility="private"/>
+        <Field name="change" type="double" visibility="private"/>
+        <Field name="tax" type="double" visibility="private"/>
+        <Field name="total" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ArrayList&lt;Item&gt;" name="items"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addItem" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="double" name="price"/>
+        </Method>
+        <Method name="addPayment" returnType="void" visibility="public">
+          <Argument type="PaymentType" name="type"/>
+          <Argument type="double" name="amount"/>
+        </Method>
+        <Method name="computeSubTotal" returnType="void" visibility="public"/>
+        <Method name="computeTax" returnType="double" visibility="public"/>
+        <Method name="computeTotal" returnType="double" visibility="public"/>
+        <Method name="getTotal" returnType="double" visibility="public"/>
+        <Method name="getSubTotal" returnType="double" visibility="public"/>
+        <Method name="getChange" returnType="double" visibility="public"/>
+        <Method name="getTax" returnType="double" visibility="public"/>
+        <Method name="printReceipt" returnType="void" visibility="public"/>
+        <Method name="takePayment" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="PaymentType" package="assignment2" visibility="public" xPosition="559.0" yPosition="378.0">
+      <Literals>
+        <Literal name="CASH"/>
+        <Literal name="DEBIT_CARD"/>
+        <Literal name="CREDIT_CARD"/>
+        <Literal name="CHECK"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="assignment2.Receipt" target="assignment2.Payment" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="assignment2.Transaction" target="assignment2.PaymentType" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="items" source="assignment2.Receipt" target="assignment2.Item" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Item&gt;"/>
+    <HasRelation name="payments" source="assignment2.Transaction" target="assignment2.Payment" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Payment&gt;"/>
+    <HasRelation name="items" source="assignment2.Transaction" target="assignment2.Item" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Item&gt;"/>
+    <HasRelation name="payments" source="assignment2.Receipt" target="assignment2.Payment" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Payment&gt;"/>
+    <HasRelation name="payType" source="assignment2.Payment" target="assignment2.PaymentType" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

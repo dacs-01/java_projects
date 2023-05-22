@@ -1,0 +1,142 @@
+/**
+*
+* @author dacs0
+* @version 1.1
+* @since 2021-02-12
+* ITSC1213 156
+* Pseudocode Submission 1 - Java Basics, Looping, Branching, Arrays Activity 
+* "Danny's Human Code"
+* 
+* This file lays out the pseudocode for several different methods required for the submission
+* 
+*/
+
+Import java scanner
+
+Public class PseudoCode1 (begin method)
+
+	Public method void testScoreAverage
+	
+	Declare testScore1 as a double
+	Declare testScore2 as a double
+	Declare testScore3 as a double
+	
+	Declare letterGrade as a char
+	Declare countOfScores as an int
+	Declare scoreAverage as a double
+	
+	User inputs testScore1
+	countOfScores is added by 1
+
+	User inputs testScore2
+	countOfScores is added by 1
+
+	User inputs testScore3
+	countOfScores is added by 1
+
+	testAverage is equal to the sum of testScores 
+	(testScore1 + testScore2 + testScore3)
+	divided by countOfScores
+
+	if the testAverage is 90 or above, the letterGrade is an A
+
+	if the testAverage is between 80 and 89, the letterGrade is a B
+
+	if the testAverage is between 70 and 79, the letterGrade is a C
+
+	if the testAverage is 60 and 69, the letterGrade is a D
+
+	if the testAverage is 59 or below, the letterGrade is a F
+
+	Print line ("Your average test score is " + testAverage + ". You earned a " + letterGrade + ".")    
+	
+	End method
+
+
+	Public method void magicDate (begin method)
+
+	Declare day as an int
+	Declare month as an int
+	Declare year as an int
+	Declare num as an int
+
+	User inputs day
+	User inputs month (an integer from 1 to 12)
+	User inputs year (last two digits of year)
+
+	num is equal to the day times the month
+	
+	if num is equal to the year
+		print line ("This date is magic!")
+	else 
+		print line ("This date is not magic.")
+
+	End method
+
+
+	Public method void shippingCompany (begin method)
+
+	Declare packageWeight as an int
+	Declare distance as a double
+	Declare distAmt
+
+	User inputs packageWeight
+	User inputs distance
+	
+	distAmt is equal to distance divided by 500
+
+	if the packageWeight is less than or equal to 2 
+		Print line ("The charge is: " + (distAmt times 1.10))
+
+	if the packageWeight is more than 2 and less than or equal to 6
+		Print line ("The charge is: " + (distAmt times 2.20))
+
+	if the packageWeight is more than 6 and less than or equal to 10
+		Print line ("The charge is: " + (distAmt times 3.70))
+
+	if the packageWeight is more than 10
+		Print line ("The charge is: " + (distAmt times 3.80)) 	
+
+	End method
+
+
+	Public method charInString (begin method)
+
+	Declare str as a string with the word "hello"
+	Declare ch as a character 'l'
+	Declare count as an int
+
+	while the statement comes back true
+		if str contains the specified ch
+			add to the count by one
+		else 
+			return the count value
+
+	Print line (count("hello"))
+
+	End method
+
+
+	Public method void largestNum (begin method)
+
+	Declare an array of integers {5, 9, 8, 3, 21}
+	Declare an integer called i
+	Declare an integer called maxNum
+
+	Iterate through the array by beginning with the first value
+		If the selected value is larger than the maxNum
+		Set the maxNum equal to that value
+	
+  	Print line ("Largest number in the array is " + maxNum)
+
+	End method
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

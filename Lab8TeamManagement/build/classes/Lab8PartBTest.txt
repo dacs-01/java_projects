@@ -1,0 +1,11 @@
+Player p1 = new Player("Miles Bridges", 21, 0, Position.FORWARD);
+Player p2 = new Player("Nicholas Batum", 24, 5, Position.FORWARD);
+Player p3 = new Player("Malik Monk", 21, 1, Position.GUARD);
+Team team = new Team("Hornets", "Charlotte");
+team.addPlayer(p3);
+team.addPlayer(p1);
+team.addPlayer(p2);
+System.out.println(team);
+System.out.println("Sorting the players\n");
+team.sortPlayers();
+System.out.println(team);

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Lab5">
+  <ClassDiagramComponents>
+    <Class name="BurgerOrder" package="lab5" visibility="public" xPosition="46.0" yPosition="148.0">
+      <Fields>
+        <Field name="numHamburgers" type="int" visibility="private"/>
+        <Field name="numCheeseburgers" type="int" visibility="private"/>
+        <Field name="numVeggieburgers" type="int" visibility="private"/>
+        <Field name="numSodas" type="int" visibility="private"/>
+        <Field name="orderTogo" type="boolean" visibility="private"/>
+        <Field name="orderNum" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="numHam"/>
+          <Argument type="int" name="numCheese"/>
+          <Argument type="int" name="numVeggie"/>
+          <Argument type="int" name="numPops"/>
+          <Argument type="boolean" name="toGo"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumHamburgers" returnType="int" visibility="public"/>
+        <Method name="setNumHamburgers" returnType="void" visibility="public">
+          <Argument type="int" name="numHamburgers"/>
+        </Method>
+        <Method name="getNumCheeseburgers" returnType="int" visibility="public"/>
+        <Method name="setNumCheeseburgers" returnType="void" visibility="public">
+          <Argument type="int" name="numCheeseburgers"/>
+        </Method>
+        <Method name="getNumVeggieburgers" returnType="int" visibility="public"/>
+        <Method name="setNumVeggieburgers" returnType="void" visibility="public">
+          <Argument type="int" name="numVeggieburgers"/>
+        </Method>
+        <Method name="getNumSodas" returnType="int" visibility="public"/>
+        <Method name="setNumSodas" returnType="void" visibility="public">
+          <Argument type="int" name="numSodas"/>
+        </Method>
+        <Method name="isOrderTogo" returnType="boolean" visibility="public"/>
+        <Method name="setOrderTogo" returnType="void" visibility="public">
+          <Argument type="boolean" name="orderTogo"/>
+        </Method>
+        <Method name="getOrderNum" returnType="int" visibility="public"/>
+        <Method name="setOrderNum" returnType="void" visibility="public">
+          <Argument type="int" name="orderNum"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FastFoodKitchen" package="lab5" visibility="public" xPosition="767.0" yPosition="262.0">
+      <Fields>
+        <Field name="orderList" type="ArrayList&lt;BurgerOrder&gt;" visibility="private"/>
+        <Field name="nextOrderNum" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNextOrderNum" returnType="int" visibility="private" isStatic="true"/>
+        <Method name="incrementNextOrderNum" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="addOrder" returnType="int" visibility="public">
+          <Argument type="int" name="ham"/>
+          <Argument type="int" name="cheese"/>
+          <Argument type="int" name="veggie"/>
+          <Argument type="int" name="soda"/>
+          <Argument type="boolean" name="TOGO"/>
+        </Method>
+        <Method name="isOrderDone" returnType="boolean" visibility="public">
+          <Argument type="int" name="orderID"/>
+        </Method>
+        <Method name="orderCallOut" returnType="void" visibility="private">
+          <Argument type="BurgerOrder" name="order"/>
+        </Method>
+        <Method name="completeSpecificOrder" returnType="void" visibility="private">
+          <Argument type="int" name="orderID"/>
+        </Method>
+        <Method name="completeNextOrder" returnType="void" visibility="private"/>
+        <Method name="getNumOrdersPending" returnType="int" visibility="public"/>
+        <Method name="simulateKitchenActivity" returnType="void" visibility="public"/>
+        <Method name="cancelOrder" returnType="boolean" visibility="public">
+          <Argument type="int" name="orderID"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Lab5" package="lab5" visibility="public" xPosition="836.0" yPosition="51.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="orderList" source="lab5.FastFoodKitchen" target="lab5.BurgerOrder" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;BurgerOrder&gt;"/>
+    <UseRelation source="lab5.FastFoodKitchen" target="lab5.BurgerOrder" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="Uses" source="lab5.Lab5" target="lab5.FastFoodKitchen" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,6 @@
+Player p1 = new Player("Miles Bridges", 21, 0, Position.FORWARD);
+Player p2 = new Player("Nicholas Batum", 24, 5, Position.FORWARD);
+Player p3 = new Player("Malik Monk", 21, 1, Position.GUARD);
+System.out.println(p1.compareTo(p2));
+System.out.println(p1.compareTo(p3));
+System.out.println(p2.compareTo(p3));
